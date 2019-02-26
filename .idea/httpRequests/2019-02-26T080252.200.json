@@ -1,0 +1,50 @@
+[
+  [
+    {
+      "type": "UUID",
+      "name": "id",
+      "value": "0f2a6bca-7f75-4d78-9674-a4a384995bc8"
+    },
+    {
+      "type": "STRING",
+      "name": "nick_name",
+      "value": "koko"
+    }
+  ],
+  [
+    {
+      "type": "UUID",
+      "name": "id",
+      "value": "e32940eb-9159-4372-b558-c64fa8986ea5"
+    },
+    {
+      "type": "STRING",
+      "name": "nick_name",
+      "value": "dolce"
+    }
+  ],
+  [
+    {
+      "type": "UUID",
+      "name": "id",
+      "value": "b788e68c-d157-48eb-ac9d-76ae56efded2"
+    },
+    {
+      "type": "STRING",
+      "name": "nick_name",
+      "value": "gabana"
+    }
+  ],
+  [
+    {
+      "type": "UUID",
+      "name": "id",
+      "value": "e9677e9c-133e-4d74-b7f7-7e99e2964bac"
+    },
+    {
+      "type": "STRING",
+      "name": "nick_name",
+      "value": "igor"
+    }
+  ]
+]

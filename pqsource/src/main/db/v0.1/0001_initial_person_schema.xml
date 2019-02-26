@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="1" author="mr.blade" context="migrate">
+        <createTable tableName="person">
+            <column name="id" type="UUID" defaultValue="${uuid_function}">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="nick_name" type="TEXT">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="user_id" type="TEXT">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="created_at" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated_at" type="TIMESTAMP" defaultValue="NOW()">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

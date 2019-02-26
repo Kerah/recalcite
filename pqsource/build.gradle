@@ -1,0 +1,100 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlin_version}")
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
+        classpath "org.liquibase:liquibase-gradle-plugin:2.0.1"
+        classpath 'org.postgresql:postgresql:42.2.5'
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-spring'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.liquibase.gradle'
+
+configurations {
+    compile.exclude module: 'spring-boot-starter-tomcat'
+    compile.exclude group: 'org.apache.tomcat'
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+compileKotlin {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        apiVersion = "1.3"
+        languageVersion = "1.3"
+    }
+}
+
+compileTestKotlin {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        apiVersion = "1.3"
+        languageVersion = "1.3"
+    }
+}
+
+def changeLog = "$projectDir/src/main/db/changelog.xml"
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
+
+    compile ("org.springframework.boot:spring-boot-starter-webflux:$spring_boot_version")
+    compile "io.projectreactor.netty:reactor-netty"
+    
+    
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.2"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.2'
+    compile project(':proto')
+
+    compile "org.postgresql:postgresql:$postgres_version"
+    compile "org.apache.calcite:calcite-core:$calcite_version"
+
+    testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile "org.mockito:mockito-core:$mockito_version"
+    testCompile "org.mockito:mockito-junit-jupiter:2.18.3"
+    testCompile "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:$junit_version")
+
+    liquibaseRuntime 'org.liquibase:liquibase-core:3.6.3'
+    liquibaseRuntime 'ch.qos.logback:logback-classic'
+    liquibaseRuntime 'org.postgresql:postgresql:42.2.5'
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+liquibase {
+    activities {
+        main {
+            changeLogFile changeLog
+            url 'jdbc:postgresql://localhost/pqsource'
+            username 'remicro'
+            password ''
+        }
+    }
+}

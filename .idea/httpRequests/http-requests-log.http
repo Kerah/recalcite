@@ -1,0 +1,297 @@
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select \"id\", \"nick_name\" from \"db1\".\"person\""
+}
+
+<> 2019-02-26T080252.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select \"id\", \"nick_name\" from \"db1\".\"person\""
+}
+
+<> 2019-02-26T080236.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select \"id\", \"nick_name\" from \"db1\".\"person\""
+}
+
+<> 2019-02-26T080200.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select \"id\", \"nick_name\" from \"db1\".\"person\""
+}
+
+<> 2019-02-26T080117.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select \"id\", \"nick_name\" from \"db1\".\"person\" WHERE \"id\"='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T080105.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select \"id\", \"nick_name\" from \"db1\".\"person\" WHERE \"id\"='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T071359.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select \"id\"", \"nick_name\" from \"db1\".\"person\" WHERE \"id\"='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T071353.400.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select id, nick_name from \"db1\".\"person\" WHERE \"id\"='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T071341.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\" WHERE \"id\"='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T071325.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\" WHERE \"db1\".\"person\".\"id\"='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T071314.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\" WHERE person.id='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T071252.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\" WHERE id='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T071240.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\" WHERE \"id\"='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T071124.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\" WHERE id='0f2a6bca-7f75-4d78-9674-a4a384995bc8'"
+}
+
+<> 2019-02-26T071110.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\" LIMIT 1 OFFSET 2"
+}
+
+<> 2019-02-26T071044.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\" LIMIT 1"
+}
+
+<> 2019-02-26T071032.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\""
+}
+
+<> 2019-02-26T070954.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\""
+}
+
+<> 2019-02-26T070916.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\""
+}
+
+<> 2019-02-26T070911.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\""
+}
+
+<> 2019-02-26T070851.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\""
+}
+
+<> 2019-02-26T070743.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\""
+}
+
+<> 2019-02-26T070657.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\""
+}
+
+<> 2019-02-26T070607.200.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\""
+}
+
+<> 2019-02-26T063305.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from \"db1\".\"person\""
+}
+
+<> 2019-02-26T063049.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from db1.\"person\""
+}
+
+<> 2019-02-26T063013.500.json
+
+###
+
+PUT http://localhost:8080/api/v1/calcite/query
+Content-Type: application/json
+
+{
+  "query": "select * from db1.\"person\""
+}
+
+<> 2019-02-26T054746.200.json
+
+###
+

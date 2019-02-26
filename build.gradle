@@ -3,6 +3,9 @@ buildscript {
     ext.spring_boot_version = '2.1.2.RELEASE'
     ext.vertx_version = '3.6.3'
     ext.junit_version = '5.2.0'
+    ext.mockito_version = '2.+'
+    ext.postgres_version = '42.2.5'
+    ext.calcite_version = '1.18.0'
     
     repositories {
         mavenLocal()
