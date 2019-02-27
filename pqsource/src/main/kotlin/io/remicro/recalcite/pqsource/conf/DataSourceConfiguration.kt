@@ -18,19 +18,26 @@ private const val PSQL_PASSWORD = "psql.password"
 
 @Configuration
 class DataSourceConfiguration(
-        @Value("\${$PSQL_HOSTNAME}") private val hostname: String,
-        @Value("\${$PSQL_PORT}") private val port: Int,
-        @Value("\${$PSQL_DATABASE}") private val database: String,
-        @Value("\${$PSQL_USER}") private val user: String,
-        @Value("\${$PSQL_PASSWORD}") private val passowrd: String
+    @Value("\${$PSQL_HOSTNAME}") private val hostname: String,
+    @Value("\${$PSQL_PORT}") private val port: Int,
+    @Value("\${$PSQL_DATABASE}") private val database: String,
+    @Value("\${$PSQL_USER}") private val user: String,
+    @Value("\${$PSQL_PASSWORD}") private val passowrd: String
 ) {
+    
     @Bean
-    fun dataSourceConnection(): Connection {
-        val con = DriverManager.getConnection("jdbc:calcite:")
+    fun dataSource(): DataSource = JdbcSchema.dataSource("jdbc:postgresql://$hostname/$database", "org.postgresql.Driver", user, passowrd)
+    
+    @Bean
+    fun schema(source: DataSource, con: Connection): JdbcSchema {
         val calciteCon = con.unwrap(CalciteConnection::class.java)
         val rootSchema = calciteCon.rootSchema
-        val ds = JdbcSchema.dataSource("jdbc:postgresql://$hostname/$database", "org.postgresql.Driver", user, passowrd)
-        rootSchema.add("db1", JdbcSchema.create(rootSchema, "db1", ds, null, null))
-        return con
+        val schema =  JdbcSchema.create(rootSchema, "db1", source, null, null)
+        
+        rootSchema.add("db1", schema)
+        return schema
     }
+    
+    @Bean
+    fun dataSourceConnection(): Connection = DriverManager.getConnection("jdbc:calcite:")
 }

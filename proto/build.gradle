@@ -48,6 +48,8 @@ dependencies {
 
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.2"
 
+    compile "org.apache.calcite:calcite-core:$calcite_version"
+
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
