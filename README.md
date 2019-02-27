@@ -1,4 +1,4 @@
 RECALCITE
 ----------
 
-Expirement with Apache Caltsite for creation database interface with separate data sources.
+Experiment with Apache Caltsite for creation database interface with separate data sources.
